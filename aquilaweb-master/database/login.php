@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_password = $_POST['password'];
 
     // Prepare SQL query to fetch the hashed password and role for the given username
-    $sql = "SELECT id, password, role FROM user WHERE username = ?"; // Select both password and role
+    $sql = "SELECT * FROM user WHERE username = ?"; // Select both password and role
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $input_username);
     $stmt->execute();
@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stored_password_hash = $row['password'];
         $username_id = $row['id'];
         $user_role = $row['role']; // Get the user's role
+        $last_name = $row['last_name'];
 
         // Verify the password using password_verify
         if (password_verify($input_password, $stored_password_hash)) {
@@ -44,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else if ($user_role === 'client') { // Explicitly check for client role
                 session_start();
                 $_SESSION['username'] = $input_username;
+                $_SESSION['lastname'] = $last_name;
                 $_SESSION['role'] = 'client'; 
                 $_SESSION['id'] = $username_id; 
                 echo 'success'; // Signal for client redirect
