@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Management System Login</title>
+    <title>Aquila Tekno Solutions Inc.</title>
     <link rel="stylesheet" href="CSS/main.css">
 </head>
 <body class="login-body">
     <video autoplay muted loop class="video-background">
-        <source src="imgsrcs/bg.mp4" type="video/mp4">
+        <source src="IMG//bg.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="login-container">
         <div class="logo-placeholder">
-            <img src="imgsrcs/aquila.png?w=150&h=150" alt="Aquila Corps Logo" class="logo">
+            <img src="IMG//aquila.png?w=150&h=150" alt="Aquila Corps Logo" class="logo">
         </div>
-        <h1>System Management Portal</h1>
+        <h1>Aquila Tekno Solutions Inc.</h1>
 
         <form id="login-form" action="/database/login.php" method="POST"> 
             <label for="username">Username</label>
@@ -55,7 +55,7 @@
                 if (data === 'success') {
                     window.location.href = '/clientds.php'; // Redirect clients
                 } else if (data === 'success_admin') {
-                    window.location.href = '/adminds.php'; // Redirect admins
+                    window.location.href = '/dashboard.php'; // Redirect admins
                 } else {
                     errorMessage.textContent = data; // Display error message
                 }
