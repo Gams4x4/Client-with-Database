@@ -57,12 +57,12 @@ $latestCreatedAt = $row['latest_created_at'];
   <div class="container">
     <!-- Sidebar -->
     <div class="sidebar">
-      <img src="logo.png" alt="Logo">
+      <img src="IMG/aquila.png" alt="Logo">
       <h2>AQUILA CORPS</h2>
       <a href="clientds.php" class="nav-link" id="dashboard-link">CLIENT Dashboard</a>
       <a href="clscheduling.php" class="nav-link" id="scheduling-link">Scheduling</a>
       <a href="clpayment.php" class="nav-link" id="payment-link">Payment</a>
-      <a href="clsettings.php" class="nav-link" id="settings-link">Settings</a>
+      <a href="login.html" class="nav-link" id="settings-link">Logout</a>
       <div class="theme-toggle">
         <button>Light</button>
         <button>Dark</button>
@@ -72,7 +72,7 @@ $latestCreatedAt = $row['latest_created_at'];
     <!-- Main Content -->
     <div class="main-content">
       <div class="header">
-        <h1>Hello, <?php echo $_SESSION['username']; ?>! 👋</h1>
+        <h1>Hello, <?php echo $_SESSION['lastname']; ?>! 👋</h1>
         <p>Good Day</p>
       </div>
 
